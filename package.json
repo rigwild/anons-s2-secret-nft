@@ -1,0 +1,21 @@
+{
+  "name": "anons-s2-club-nft",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "extractTraits": "node dist/extractTraits.js",
+    "getScores": "node dist/getElementsRarity.js",
+    "exportScores": "node dist/getElementsRarity.js --quiet --out > _output_results.log",
+    "getScoresJson": "node dist/getElementsRarity.js --quiet --json",
+    "build": "tsc",
+    "website:dev": "cd vite-project && pnpm dev",
+    "website:build": "pnpm build && pnpm exportScores && cd vite-project && pnpm build"
+  },
+  "author": "rigwild <me@rigwild.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "zx": "^7.0.7"
+  }
+}
