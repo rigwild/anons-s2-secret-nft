@@ -34,9 +34,21 @@ $ sha256sum _*
 TODO: Add hashes when minted out
 ```
 
+## Fetch input data
+
+To calculate from zero, download the input data directly from the API.
+
+```sh
+rm _input_*
+rm _output_*
+curl -o _input_elements.json https://rest-api.anons.army/api/anons/s2
+```
+
+**Note:** Your hashes may be different if you just updated the data, as some nft were probably revealed since my hashes were produced.
+
 ## Website
 
-A website is available at https://redacted.rigwild.dev/
+A website is available at https://anons2.rigwild.dev/
 
 ![website screenshot](./screenshot.png)
 
