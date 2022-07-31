@@ -8,6 +8,7 @@ import ElementComponent from '../components/Element.vue'
 import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
 import rarity from '../../_output_rarity.json'
 import { categories } from '../../types'
+import { getElementBlockHeight } from './utils'
 
 console.log('Use `elements()` to show raw data')
 ;(window as any).elements = () => {
@@ -90,15 +91,11 @@ const sortById = () => (elements.value = elements.value.sort((a, b) => a.id - b.
 const sortByScore = () =>
   (elements.value = elements.value.sort((a, b) => rarity.elements[b.id].score - rarity.elements[a.id].score))
 
-// Set the virtual scroller properties
+// Set the virtual scroller elements height
 // Note: If the height value is invalid the virtual scroller will jump randomly
-const breakpoints = useBreakpoints({ laptop: 1287 })
-const getElementBlockHeight = (index: number) => {
-  if (breakpoints.isGreater('laptop')) return 557
-  else return elements.value[index]?.revealed ? 1250 : 650
-}
+// Change value in getElementBlockHeight if it jumps!
 const { list, containerProps, wrapperProps } = useVirtualList(elements, {
-  itemHeight: getElementBlockHeight
+  itemHeight: index => getElementBlockHeight(index)
 })
 
 // Apply route query parameters on page load
@@ -145,7 +142,7 @@ if (filterTrait.value) filterElementsByTrait()
     <div v-bind="containerProps" style="height: 94vh">
       <div v-bind="wrapperProps">
         <div v-for="(item, index) in list" :key="`${item.data.id}-${item.index}`">
-          <ElementComponent :element="(item.data as any)" :blockHeight="getElementBlockHeight(index)" />
+          <ElementComponent :element="(item.data as any)" :block-height="getElementBlockHeight(index)" />
         </div>
       </div>
     </div>

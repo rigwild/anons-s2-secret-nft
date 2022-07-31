@@ -4,4 +4,4 @@ dist
 dist-ssr
 *.local
 elements-images/source
-elements-images/compressed
+elements-images/compressed*

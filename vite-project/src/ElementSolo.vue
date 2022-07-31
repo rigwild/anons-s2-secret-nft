@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import ElementComponent from '../components/Element.vue'
+import { getElementBlockHeight } from './utils'
 
 import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
 const props = defineProps({ elementId: String })
 
 const elementId = +props.elementId!
 
-const element = elementsFixed.find(x => x.id === elementId)
+const elementIndex = elementsFixed.findIndex(x => x.id === elementId)
+const element = elementIndex >= 0 ? elementsFixed[elementIndex] : undefined
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const element = elementsFixed.find(x => x.id === elementId)
     <h2 class="text-center">The Anon S2 with ID {{ elementId }} is minted but not revealed!</h2>
   </div>
   <div v-else>
-    <ElementComponent :element="(element as any)" />
+    <ElementComponent :element="(element as any)" :block-height="getElementBlockHeight(elementIndex)" />
   </div>
 </template>
 
