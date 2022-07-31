@@ -1,5 +1,4 @@
 #!/usr/bin/env zx
-
 import 'zx/globals'
 
 await $`mkdir -p ${__dirname}/source`
