@@ -1,0 +1,50 @@
+<script setup lang="ts">
+import ElementComponent from '../components/Element.vue'
+
+import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
+const props = defineProps({ elementId: String })
+
+const elementId = +props.elementId!
+console.log('elementId', elementId)
+console.log('elementsFixed.length.toString().length', elementsFixed.length.toString().length)
+
+const element = elementsFixed.find(x => x.id === elementId)
+</script>
+
+<template>
+  <div v-if="!element">
+    <h2 class="text-center">Could not find Anon S2 with ID {{ elementId }}!</h2>
+  </div>
+  <div v-else-if="!element.revealed">
+    <h2 class="text-center">The Anon S2 with ID {{ elementId }} is minted but not revealed!</h2>
+  </div>
+  <div v-else>
+    <ElementComponent :element="(element as any)" />
+  </div>
+</template>
+
+<style>
+.filters {
+  text-align: center;
+  margin: 15px;
+}
+.filters input {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.filters > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filters > div > div {
+  margin: 15px;
+}
+
+@media (max-width: 1280px) {
+  .filters > div {
+    flex-direction: column;
+  }
+}
+</style>
