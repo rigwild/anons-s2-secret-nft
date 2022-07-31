@@ -7,14 +7,14 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@vueuse/components": "^6.7.4",
-    "@vueuse/core": "^6.7.4",
-    "@vueuse/router": "^6.8.0",
-    "vue": "^3.2.16",
+    "@vueuse/components": "^9.0.2",
+    "@vueuse/core": "^9.0.2",
+    "@vueuse/router": "^9.0.2",
+    "vue": "^3.2.37",
     "vue-router": "4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.3",
-    "vite": "^2.6.4"
+    "@vitejs/plugin-vue": "^3.0.1",
+    "vite": "^3.0.4"
   }
 }
