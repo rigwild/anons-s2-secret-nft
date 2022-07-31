@@ -2,6 +2,7 @@
 
 rm _input_*
 rm _output_*
+# API endpoint containing your full collection data
 curl https://rest-api.anons.army/api/anons/s2 | jq > _input_elements.json
 pnpm build
 pnpm extractTraits

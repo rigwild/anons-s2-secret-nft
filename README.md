@@ -85,7 +85,7 @@ The only requirements are:
 - Mention in your README that this was initially built by me, with a link to this repo.
 - Mention in your website that this was initially built by me, with a link to this repo.
 
-The code is as generic as possible, you only need to import your data in `_input_elements.json` (with the same format), and change some texts in the website.
+The code is as generic as possible, you only need to import your data in `_input_elements.json` (with the same format), edit [`./types.ts`](./types.ts) with your traits and change some texts in the website.
 
 You may need to edit stuff if your NFTs collection doesn't have a "reveal" feature (`element.revealed: 1`).
 
