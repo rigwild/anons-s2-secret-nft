@@ -1,5 +1,6 @@
 import { argv, fs } from 'zx'
-import type { Element, ElementWithRarity, ElementsRarity, CategoryRarity, TraitRarity } from './types'
+import { categories } from './types.js'
+import type { Element, ElementWithRarity, ElementsRarity, CategoryRarity, TraitRarity } from './types.js'
 
 const getTraits = async (category: string): Promise<string[]> => fs.readJson(`_input_traits_${category}.json`)
 
@@ -9,32 +10,9 @@ const pad = (n, l = 4) => (n + '').padStart(l, ' ')
 const percent = (a, b) => (a / b) * 100
 const percentStr = (r, p = 5) => `${pad(r.toFixed(2), p)} %`
 
-const [headItem, body, tattoos, backgrounds, baseLayer, topLayer, eyes, neck, mouth, ears] = await Promise.all([
-  getTraits('headItem'),
-  getTraits('body'),
-  getTraits('tattoos'),
-  getTraits('backgrounds'),
-  getTraits('baseLayer'),
-  getTraits('topLayer'),
-  getTraits('eyes'),
-  getTraits('neck'),
-  getTraits('mouth'),
-  getTraits('ears')
-])
-const traits = {
-  headItem,
-  body,
-  tattoos,
-  backgrounds,
-  baseLayer,
-  topLayer,
-  eyes,
-  neck,
-  mouth,
-  ears
-}
+const traitsArray = await Promise.all(categories.map(async x => [x, await getTraits(x)]))
+const traits = Object.fromEntries(traitsArray) as { [category: string]: string[] }
 const traitsCategories = Object.keys(traits)
-
 const elements = await getElements()
 // console.log(elements)
 

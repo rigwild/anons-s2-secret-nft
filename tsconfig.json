@@ -9,7 +9,7 @@
     // "strict": true,
     // "alwaysStrict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "nodenext"
   },
   "include": ["*.mts", "types.ts", "getElementsRarity.ts", "extractTraits.ts"],
   "exclude": ["node_modules/**/*", "test/**/*"]
