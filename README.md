@@ -89,6 +89,14 @@ The code is as generic as possible, you only need to import your data in `_input
 
 You may need to edit stuff if your NFTs collection doesn't have a "reveal" feature (`element.revealed: 1`).
 
+### Deploy
+
+Run with Node.js 16. To do this on [Cloudflare Pages](https://pages.cloudflare.com/), set the `NODE_ENV` environment variable to `16` (see [Language support and tools](https://developers.cloudflare.com/pages/platform/build-configuration/#language-support-and-tools)).
+
+Build command: `cd vite-project && npm install -D && npm run build`
+
+Build output directory: `/vite-project/dist`
+
 ## License
 
 [The MIT License](./LICENSE)

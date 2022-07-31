@@ -27,11 +27,7 @@ else elementBlockHeight = element.revealed ? 1250 : 650
   <div class="element-block" :style="`height: ${elementBlockHeight}px`">
     <div class="element-card" :key="`element-${element.id}`">
       <div class="element-img-container">
-        <img
-          :src="element.revealed ? imageUrlCompressed : '/placeholder.jpg'"
-          :alt="`element ${element.id}`"
-          :key="element.id"
-        />
+        <img :src="element.revealed ? imageUrlCompressed : '/placeholder.jpg'" :alt="`element ${element.id}`" />
       </div>
       <div class="element-stats">
         <h2>

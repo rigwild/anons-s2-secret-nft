@@ -144,7 +144,7 @@ if (filterTrait.value) filterElementsByTrait()
   <div v-else :key="stateKey">
     <div v-bind="containerProps" style="height: 94vh">
       <div v-bind="wrapperProps">
-        <div v-for="item in list" :key="item.index">
+        <div v-for="item in list" :key="`${item.data.id}-${item.index}`">
           <ElementComponent :element="(item.data as any)" />
         </div>
       </div>
