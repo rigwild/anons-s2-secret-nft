@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useBreakpoints } from '@vueuse/core'
-
 import rarity from '../../_output_rarity.json'
 import { Element, categories } from '../../types'
 import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
@@ -84,27 +82,28 @@ if (element.revealed) {
 .element-card {
   max-width: 1200px;
   margin: 40px auto;
+  height: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #2e3844;
   border-radius: 30px;
-  box-shadow: 0px 5px 24px 5px #00000042;
+  box-shadow: 0 5px 24px 5px #00000042;
 }
 .element-card > .element-img-container {
-  width: 500px;
-  height: 500px;
-  flex-basis: 500px;
+  width: 100%;
+  height: 100%;
+  flex-basis: 560px;
   flex-grow: 0;
   flex-shrink: 0;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .element-img-container img {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  box-shadow: 0px 5px 24px 5px #00000042;
+  border-radius: 20px 0 0 20px;
 }
 
 .element-stats {
@@ -112,8 +111,10 @@ if (element.revealed) {
   padding: 0 15px;
 }
 
+/* Phone & tablet */
 @media only screen and (max-width: 1280px) {
   .element-card {
+    height: fit-content;
     text-align: center;
     flex-direction: column;
     margin: 50px 0;
@@ -131,6 +132,7 @@ if (element.revealed) {
   }
 }
 
+/* Phone */
 @media only screen and (max-width: 640px) {
   .element-card img {
     height: auto;
@@ -139,7 +141,11 @@ if (element.revealed) {
   }
 }
 
+/* Tablet */
 @media only screen and (min-width: 640px) and (max-width: 1280px) {
+  .element-card {
+    height: fit-content;
+  }
   .element-card > .element-img-container {
     width: initial;
     height: initial;
@@ -153,6 +159,7 @@ if (element.revealed) {
     width: 500px;
     border-radius: 30px;
     margin-top: 30px;
+    box-shadow: 0 5px 24px 5px #00000042;
   }
 }
 </style>

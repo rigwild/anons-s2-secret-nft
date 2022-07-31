@@ -3,7 +3,7 @@
     <div>
       Made with ❤ by <a href="https://github.com/rigwild">rigwild</a> - ⭐ Star on
       <a href="https://github.com/rigwild/anons-s2-secret-nft">GitHub</a> - See
-      <a href="https://anons2.rigwild.dev/">Anons S1 "OGs"</a>
+      <a href="https://anons.rigwild.dev/">Anons S1 "OGs"</a>
     </div>
   </div>
 
