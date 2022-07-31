@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch, nextTick } from 'vue'
-import { useBreakpoints } from '@vueuse/core'
-import { UseVirtualList } from '@vueuse/components'
+import { useBreakpoints, useVirtualList } from '@vueuse/core'
 import { useRouteQuery } from '@vueuse/router'
 
 import ElementComponent from '../components/Element.vue'
@@ -17,10 +16,6 @@ console.log('Use `elements()` to show raw data')
   console.log('rarity', rarity)
 }
 
-const breakpoints = useBreakpoints({ laptop: 1024 })
-
-const elementCardSize = () => (breakpoints.isGreater('laptop') ? 600 : 1350)
-console.log('elementCardSize', elementCardSize())
 const props = defineProps({
   sortBy: String,
   filterTrait: String
@@ -95,6 +90,17 @@ const sortById = () => (elements.value = elements.value.sort((a, b) => a.id - b.
 const sortByScore = () =>
   (elements.value = elements.value.sort((a, b) => rarity.elements[b.id].score - rarity.elements[a.id].score))
 
+// Set the virtual scroller properties
+// Note: If the height value is invalid here or in `Element.vue`,
+// the virtual scroller will jump randomly
+const breakpoints = useBreakpoints({ laptop: 1024 })
+const { list, containerProps, wrapperProps } = useVirtualList(elements.value, {
+  itemHeight: i => {
+    if (breakpoints.isGreater('laptop')) return 557
+    else return elements.value[i]?.revealed ? 1250 : 650
+  }
+})
+
 // Apply route query parameters on page load
 sortElement()
 filterTrait.value = props.filterTrait!
@@ -136,11 +142,13 @@ if (filterTrait.value) filterElementsByTrait()
   </div>
 
   <div v-else :key="stateKey">
-    <UseVirtualList :list="elements" :options="{ itemHeight: elementCardSize, overscan: 2 }" height="94vh">
-      <template #="{ data: element }">
-        <ElementComponent :element="element" />
-      </template>
-    </UseVirtualList>
+    <div v-bind="containerProps" style="height: 94vh">
+      <div v-bind="wrapperProps">
+        <div v-for="item in list" :key="item.index">
+          <ElementComponent :element="(item.data as any)" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
