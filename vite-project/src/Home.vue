@@ -77,7 +77,7 @@ const filterElementsByTrait = () => {
     sortElement()
   } else {
     elements.value = elementsFixed.filter(element =>
-      categories.some(category => element[category]!.toLowerCase().includes(filterTrait.value))
+      categories.some(category => element[category]?.toLowerCase().includes(filterTrait.value))
     )
   }
 }
@@ -94,7 +94,7 @@ const sortByScore = () =>
 // Note: If the height value is invalid here or in `Element.vue`,
 // the virtual scroller will jump randomly
 const breakpoints = useBreakpoints({ laptop: 1024 })
-const { list, containerProps, wrapperProps } = useVirtualList(elements.value, {
+const { list, containerProps, wrapperProps } = useVirtualList(elements, {
   itemHeight: i => {
     if (breakpoints.isGreater('laptop')) return 557
     else return elements.value[i]?.revealed ? 1250 : 650
@@ -118,7 +118,7 @@ if (filterTrait.value) filterElementsByTrait()
           id="filterId"
           type="text"
           placeholder="Filter by Anon S2 ID"
-          :maxlength="elementsFixed.length.toString().length"
+          :maxlength="5"
         />
       </div>
       <div>

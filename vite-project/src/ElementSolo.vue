@@ -5,8 +5,6 @@ import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
 const props = defineProps({ elementId: String })
 
 const elementId = +props.elementId!
-console.log('elementId', elementId)
-console.log('elementsFixed.length.toString().length', elementsFixed.length.toString().length)
 
 const element = elementsFixed.find(x => x.id === elementId)
 </script>

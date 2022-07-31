@@ -13,11 +13,6 @@ if (element.revealed) {
   imageUrlCompressed = new URL(element.imageUrl).pathname.split('/').slice(-1)[0]
   imageUrlCompressed = `/elements-images/${imageUrlCompressed.split('.').slice(0, -1).join('.')}.webp`
 }
-const setUriHash = (elementId: number) => {
-  const path = `/element/${elementId}`
-  const fullUri = `${window.location.origin}${path}`
-  navigator.clipboard.writeText(fullUri).then(() => alert(`Link copied to clipboard! ${fullUri}`))
-}
 
 // Set the virtual scroller properties
 // Note: If the height value is invalid here or in `Element.vue`,
@@ -45,7 +40,7 @@ else elementBlockHeight = element.revealed ? 1250 : 650
             >(Rank {{ rarity.elements[(element.id + '') as keyof typeof rarity.elements].rank }} /
             {{ elementsFixed.length }})</span
           >
-          <span @click="setUriHash(element.id)" class="pointer">🔗</span>
+          <router-link :to="`/element/${element.id}`" class="pointer">🔗</router-link>
         </h2>
         <div v-if="element.revealed">
           <h4>Traits</h4>
