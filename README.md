@@ -61,7 +61,7 @@ pnpm build
 curl https://rest-api.anons.army/api/anons/s2 | jq > _input_elements.json && pnpm extractTraits && pnpm exportScores
 ANON='1300 1523 187 755 780 870'
 ANON='1300,1523 187| 755 -780;870' # any format, parameters are cleaned!
-zx _getRanking.mjs $ANON ; zx _getRanking.mjs $ANON | clipboard
+zx getRanking.mjs $ANON ; zx getRanking.mjs $ANON | clipboard
 
 Output (+ copied to clipboard):
 

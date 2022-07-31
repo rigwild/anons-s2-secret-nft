@@ -91,14 +91,14 @@ const sortByScore = () =>
   (elements.value = elements.value.sort((a, b) => rarity.elements[b.id].score - rarity.elements[a.id].score))
 
 // Set the virtual scroller properties
-// Note: If the height value is invalid here or in `Element.vue`,
-// the virtual scroller will jump randomly
-const breakpoints = useBreakpoints({ laptop: 1024 })
+// Note: If the height value is invalid the virtual scroller will jump randomly
+const breakpoints = useBreakpoints({ laptop: 1287 })
+const getElementBlockHeight = (index: number) => {
+  if (breakpoints.isGreater('laptop')) return 557
+  else return elements.value[index]?.revealed ? 1250 : 650
+}
 const { list, containerProps, wrapperProps } = useVirtualList(elements, {
-  itemHeight: i => {
-    if (breakpoints.isGreater('laptop')) return 557
-    else return elements.value[i]?.revealed ? 1250 : 650
-  }
+  itemHeight: getElementBlockHeight
 })
 
 // Apply route query parameters on page load
@@ -144,8 +144,8 @@ if (filterTrait.value) filterElementsByTrait()
   <div v-else :key="stateKey">
     <div v-bind="containerProps" style="height: 94vh">
       <div v-bind="wrapperProps">
-        <div v-for="item in list" :key="`${item.data.id}-${item.index}`">
-          <ElementComponent :element="(item.data as any)" />
+        <div v-for="(item, index) in list" :key="`${item.data.id}-${item.index}`">
+          <ElementComponent :element="(item.data as any)" :blockHeight="getElementBlockHeight(index)" />
         </div>
       </div>
     </div>

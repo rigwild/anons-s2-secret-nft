@@ -5,7 +5,7 @@ import rarity from '../../_output_rarity.json'
 import { Element, categories } from '../../types'
 import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
 
-const { element } = defineProps<{ element: Element }>()
+const { element, blockHeight } = defineProps<{ element: Element; blockHeight: number }>()
 
 // Get the compressed image version URL sitting at `/elements-images/<element>.webp`
 let imageUrlCompressed = ''
@@ -13,18 +13,10 @@ if (element.revealed) {
   imageUrlCompressed = new URL(element.imageUrl).pathname.split('/').slice(-1)[0]
   imageUrlCompressed = `/elements-images/${imageUrlCompressed.split('.').slice(0, -1).join('.')}.webp`
 }
-
-// Set the virtual scroller properties
-// Note: If the height value is invalid here or in `Element.vue`,
-// the virtual scroller will jump randomly
-const breakpoints = useBreakpoints({ laptop: 1024 })
-let elementBlockHeight = 0
-if (breakpoints.isGreater('laptop')) elementBlockHeight = 557
-else elementBlockHeight = element.revealed ? 1250 : 650
 </script>
 
 <template>
-  <div class="element-block" :style="`height: ${elementBlockHeight}px`">
+  <div class="element-block" :style="`height: ${blockHeight}px`">
     <div class="element-card" :key="`element-${element.id}`">
       <div class="element-img-container">
         <img :src="element.revealed ? imageUrlCompressed : '/placeholder.jpg'" :alt="`element ${element.id}`" />
