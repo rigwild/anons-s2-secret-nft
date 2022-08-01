@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import rarity from '../../_output_rarity.json'
-import { elementsFixed, getElementBlockHeight } from '../src/utils'
+import { elementsFixed, rarity, getElementBlockHeight } from '../src/utils'
 import { Element, categories } from '../../types'
 
 const { element, elementIndex } = defineProps<{ element: Element; elementIndex: number }>()
@@ -13,9 +12,13 @@ onMounted(async () => {
     // Try to get the compressed image version URL sitting at `/elements-images/<element>.webp`
     let imageCompressedUrl = new URL(element.imageUrl).pathname.split('/').slice(-1)[0]
     imageCompressedUrl = `/elements-images/${imageCompressedUrl.split('.').slice(0, -1).join('.')}.webp`
-    const imageCompressedData = await fetch(imageCompressedUrl)
-    if (imageCompressedData.ok) {
-      console.log('ok', imageCompressedData, imageCompressedUrl)
+
+    // Check the image is present in assets (if not present, it means this one is a new one
+    // from the auto-update script and was and not yet compressed/included in the deployment assets)
+    // See the README "Automatically update the website" section for more information
+    const res = await fetch(imageCompressedUrl)
+
+    if (res.ok && res.headers.get('content-type')?.includes('image')) {
       imageUrl.value = imageCompressedUrl
     } else {
       // Fallback to the original image URL
