@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import rarity from '../../_output_rarity.json'
-import { Element, categories } from '../../types'
 import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
+import { getElementBlockHeight } from '../src/utils'
+import { Element, categories } from '../../types'
 
-const { element, blockHeight } = defineProps<{ element: Element; blockHeight: number }>()
+const { element, elementIndex } = defineProps<{ element: Element; elementIndex: number }>()
+const blockHeight = getElementBlockHeight(elementIndex)
 
 // Get the compressed image version URL sitting at `/elements-images/<element>.webp`
 let imageUrlCompressed = ''
@@ -16,7 +18,7 @@ if (element.revealed) {
 <template>
   <div class="element-block" :style="`height: ${blockHeight}px`">
     <div class="element-card" :key="`element-${element.id}`">
-      <div class="element-img-container">
+      <div class="element-img-container" :style="`flex-basis: ${blockHeight}px;`">
         <img :src="element.revealed ? imageUrlCompressed : '/placeholder.jpg'" :alt="`element ${element.id}`" />
       </div>
       <div class="element-stats">
@@ -93,7 +95,6 @@ if (element.revealed) {
 .element-card > .element-img-container {
   width: 100%;
   height: 100%;
-  flex-basis: 560px;
   flex-grow: 0;
   flex-shrink: 0;
   margin: 0;
@@ -123,7 +124,7 @@ if (element.revealed) {
     width: 100%;
     height: 100%;
     margin: 0;
-    flex-basis: initial;
+    flex-basis: initial !important;
     flex-grow: initial;
     flex-shrink: initial;
   }
@@ -150,7 +151,7 @@ if (element.revealed) {
     width: initial;
     height: initial;
     margin: 0;
-    flex-basis: initial;
+    flex-basis: initial !important;
     flex-grow: initial;
     flex-shrink: initial;
   }

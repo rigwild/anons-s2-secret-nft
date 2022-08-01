@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch, nextTick } from 'vue'
-import { useBreakpoints, useVirtualList } from '@vueuse/core'
+import { useVirtualList } from '@vueuse/core'
 import { useRouteQuery } from '@vueuse/router'
 
 import ElementComponent from '../components/Element.vue'
@@ -142,7 +142,7 @@ if (filterTrait.value) filterElementsByTrait()
     <div v-bind="containerProps" style="height: 94vh">
       <div v-bind="wrapperProps">
         <div v-for="(item, index) in list" :key="`${item.data.id}-${item.index}`">
-          <ElementComponent :element="(item.data as any)" :block-height="getElementBlockHeight(index)" />
+          <ElementComponent :element="(item.data as any)" :element-index="index" />
         </div>
       </div>
     </div>
