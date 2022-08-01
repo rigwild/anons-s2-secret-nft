@@ -2,17 +2,14 @@
 import { ref, computed, watch, nextTick } from 'vue'
 import { useVirtualList } from '@vueuse/core'
 import { useRouteQuery } from '@vueuse/router'
-
 import ElementComponent from '../components/Element.vue'
-
-import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
-import rarity from '../../_output_rarity.json'
+import { elementsFixed, rarity } from './utils'
 import { categories } from '../../types'
 import { getElementBlockHeight } from './utils'
 
 console.log('Use `elements()` to show raw data')
 ;(window as any).elements = () => {
-  console.log('This can be found here: https://github.com/rigwild/anons-s2-club-nft#raw-rarity-scores')
+  console.log('This can be found here: https://github.com/rigwild/anons-s2-secret-nft')
   console.log('elements', elementsFixed)
   console.log('rarity', rarity)
 }

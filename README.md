@@ -51,7 +51,7 @@ Download the latest data from the API, calculate the rarity from scratch and upd
 ```sh
 sudo apt install curl jq
 pnpm i -g zx @squoosh/cli
-./update_website.sh
+./scripts/update_website.sh
 ```
 
 ## Get rankings of NFTs list
@@ -61,7 +61,7 @@ pnpm build
 curl https://rest-api.anons.army/api/anons/s2 | jq > _input_elements.json && pnpm extractTraits && pnpm exportScores
 ANON='1300 1523 187 755 780 870'
 ANON='1300,1523 187| 755 -780;870' # any format, parameters are cleaned!
-zx getRanking.mjs $ANON ; zx getRanking.mjs $ANON | clipboard
+zx scripts/getRanking.mjs $ANON ; zx scripts/getRanking.mjs $ANON | clipboard
 
 Output (+ copied to clipboard):
 
@@ -96,6 +96,51 @@ Run with Node.js 16. To do this on [Cloudflare Pages](https://pages.cloudflare.c
 Build command: `cd vite-project && npm install -D && npm run build`
 
 Build output directory: `/vite-project/dist`
+
+### Automatically update the website
+
+Create a Cloudflare Worker.
+
+```js
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request).catch(err => new Response(err.stack, { status: 500 })))
+})
+
+/**
+ * @param {Request} request
+ * @returns {Promise<Response>}
+ */
+async function handleRequest(request) {
+  const _output_rarity = await ranks.get('_output_rarity.json')
+  const _output_elementsNullTraitsAsNone = await ranks.get('_output_elementsNullTraitsAsNone.json')
+  return new Response(
+    `{"_output_rarity":${_output_rarity},"_output_elementsNullTraitsAsNone":${_output_elementsNullTraitsAsNone}}`,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': 'max-age=600' // Cache client-side for 10 minutes
+      }
+    }
+  )
+}
+```
+
+Store the data into a Cloudflare Workers KV namespace. This script will update the data every 10 minutes.
+
+```sh
+CLOUDFLARE_ACCOUNT_ID=<CLOUDFLARE_ACCOUNT_ID> \
+CLOUDFLARE_API_KEY=<CLOUDFLARE_API_KEY> \
+CLOUDFLARE_NAMESPACE_ID=<CLOUDFLARE_NAMESPACE_ID> \
+zx ./scripts/updateCloudflareWorkersKV.mjs
+```
+
+Then configure your worker service by binding the KV namespace to it with the variable `ranks`.
+
+When deploying the website, set the `VITE_API_URI` environment variable to your worker API endpoint.
+
+Voilà! The website will auto update every 10 minutes. Keep in mind that new images will be fetched using the element `imageUrl` and uncompressed.
+It is a good idea to update the website sometimes so users load the compressed images instead of the remote ones.
 
 ## License
 

@@ -1,25 +1,35 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import rarity from '../../_output_rarity.json'
-import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
-import { getElementBlockHeight } from '../src/utils'
+import { elementsFixed, getElementBlockHeight } from '../src/utils'
 import { Element, categories } from '../../types'
 
 const { element, elementIndex } = defineProps<{ element: Element; elementIndex: number }>()
 const blockHeight = getElementBlockHeight(elementIndex)
 
-// Get the compressed image version URL sitting at `/elements-images/<element>.webp`
-let imageUrlCompressed = ''
-if (element.revealed) {
-  imageUrlCompressed = new URL(element.imageUrl).pathname.split('/').slice(-1)[0]
-  imageUrlCompressed = `/elements-images/${imageUrlCompressed.split('.').slice(0, -1).join('.')}.webp`
-}
+let imageUrl = ref('/placeholder.jpg')
+onMounted(async () => {
+  if (element.revealed) {
+    // Try to get the compressed image version URL sitting at `/elements-images/<element>.webp`
+    let imageCompressedUrl = new URL(element.imageUrl).pathname.split('/').slice(-1)[0]
+    imageCompressedUrl = `/elements-images/${imageCompressedUrl.split('.').slice(0, -1).join('.')}.webp`
+    const imageCompressedData = await fetch(imageCompressedUrl)
+    if (imageCompressedData.ok) {
+      console.log('ok', imageCompressedData, imageCompressedUrl)
+      imageUrl.value = imageCompressedUrl
+    } else {
+      // Fallback to the original image URL
+      imageUrl.value = element.imageUrl
+    }
+  }
+})
 </script>
 
 <template>
   <div class="element-block" :style="`height: ${blockHeight}px`">
     <div class="element-card" :key="`element-${element.id}`">
       <div class="element-img-container" :style="`flex-basis: ${blockHeight}px;`">
-        <img :src="element.revealed ? imageUrlCompressed : '/placeholder.jpg'" :alt="`element ${element.id}`" />
+        <img :src="imageUrl" :alt="`element ${element.id}`" />
       </div>
       <div class="element-stats">
         <h2>

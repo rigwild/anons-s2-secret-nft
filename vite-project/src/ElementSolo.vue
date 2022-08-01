@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ElementComponent from '../components/Element.vue'
+import { elementsFixed } from './utils'
 
-import elementsFixed from '../../_output_elementsNullTraitsAsNone.json'
 const props = defineProps({ elementId: String })
 
 const elementId = +props.elementId!
