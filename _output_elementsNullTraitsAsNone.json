@@ -22,6 +22,22 @@
     "isMinted": 1
   },
   {
+    "id": 4,
+    "headItem": "Snapback",
+    "body": "Blue",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Hoodie",
+    "topLayer": "Backpack",
+    "eyes": "Gold Sunglass",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0069_Custom.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 7,
     "headItem": "Bucket Hat",
     "body": "Grey",
@@ -166,6 +182,22 @@
     "isMinted": 1
   },
   {
+    "id": 24,
+    "headItem": "Bandana",
+    "body": "Pink",
+    "tattoos": "Yes",
+    "backgrounds": "Season1",
+    "baseLayer": "Crew",
+    "topLayer": "Utility Jacket",
+    "eyes": "None",
+    "neck": "Gold",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0083_Custom.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 25,
     "headItem": "Wide Brim",
     "body": "Pink",
@@ -227,6 +259,12 @@
     "ears": "Earbuds",
     "imageUrl": "https://images.anons.army/img/0112_Custom.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 30,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -588,6 +626,12 @@
     "isMinted": 1
   },
   {
+    "id": 67,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 68,
     "headItem": "Snapback",
     "body": "Blue",
@@ -633,6 +677,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0020_Last_500.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 74,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -788,6 +838,12 @@
     "isMinted": 1
   },
   {
+    "id": 99,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 100,
     "imageUrl": null,
     "revealed": 0,
@@ -886,6 +942,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0171_Last_500.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 108,
+    "headItem": "Beanie",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Season1",
+    "baseLayer": "Crew",
+    "topLayer": "Puffer Vest",
+    "eyes": "None",
+    "neck": "Gold",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0179_Last_500.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -1015,6 +1087,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0243_Last_500.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 128,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -1666,6 +1744,22 @@
     "isMinted": 1
   },
   {
+    "id": 192,
+    "headItem": "Crown",
+    "body": "Blue",
+    "tattoos": "No",
+    "backgrounds": "Wood",
+    "baseLayer": "Hawaiian Shirt",
+    "topLayer": "None",
+    "eyes": "VR",
+    "neck": "None",
+    "mouth": "Bubble Gum",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0064.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 195,
     "headItem": "Cowboy",
     "body": "Green",
@@ -1695,6 +1789,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0074.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 198,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -1860,6 +1960,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0108.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 217,
+    "headItem": "Snapback",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Bare",
+    "topLayer": "Utility Jacket",
+    "eyes": "Goggles",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1432.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -2094,6 +2210,28 @@
     "isMinted": 1
   },
   {
+    "id": 243,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
+    "id": 244,
+    "headItem": "Bandana",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Concrete",
+    "baseLayer": "Hoodie",
+    "topLayer": "None",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "Earring",
+    "imageUrl": "https://images.anons.army/img/0173.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 245,
     "headItem": "Bucket Hat",
     "body": "Grey",
@@ -2193,6 +2331,18 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0223.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 261,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
+    "id": 262,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -2372,6 +2522,22 @@
     "isMinted": 1
   },
   {
+    "id": 282,
+    "headItem": "Snapback",
+    "body": "Brown",
+    "tattoos": "Yes",
+    "backgrounds": "Season1",
+    "baseLayer": "Crew",
+    "topLayer": "Varsity",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "Earring",
+    "imageUrl": "https://images.anons.army/img/0276.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 283,
     "headItem": "Beanie",
     "body": "Brown",
@@ -2484,6 +2650,22 @@
     "isMinted": 1
   },
   {
+    "id": 291,
+    "headItem": "Beanie",
+    "body": "Blue",
+    "tattoos": "No",
+    "backgrounds": "Concrete",
+    "baseLayer": "Jersey",
+    "topLayer": "None",
+    "eyes": "Eye Patch",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0293.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 292,
     "headItem": "Snapback",
     "body": "Grey",
@@ -2497,6 +2679,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0294.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 293,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -2564,6 +2752,12 @@
     "isMinted": 1
   },
   {
+    "id": 300,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 302,
     "headItem": "Beanie",
     "body": "Grey",
@@ -2576,6 +2770,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0324.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 305,
+    "headItem": "Dad Hat",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Hoodie",
+    "topLayer": "Varsity",
+    "eyes": "Black Sunglass",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "Earbuds",
+    "imageUrl": "https://images.anons.army/img/0330.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -2726,6 +2936,22 @@
     "mouth": "Bandana",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0365.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 321,
+    "headItem": "Crown",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Hoodie",
+    "topLayer": "None",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0368.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -3095,6 +3321,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0435.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 355,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -3744,6 +3976,22 @@
     "isMinted": 1
   },
   {
+    "id": 416,
+    "headItem": "Beanie",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Tile",
+    "baseLayer": "Crew",
+    "topLayer": "Utility Jacket",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0564.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 418,
     "headItem": "Wide Brim",
     "body": "Blue",
@@ -4082,6 +4330,12 @@
     "isMinted": 1
   },
   {
+    "id": 457,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 459,
     "headItem": "Snapback",
     "body": "Blue",
@@ -4277,6 +4531,18 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/0707.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 477,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
+    "id": 480,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -4536,6 +4802,22 @@
     "isMinted": 1
   },
   {
+    "id": 512,
+    "headItem": "Bucket Hat",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Plaster",
+    "baseLayer": "Crew",
+    "topLayer": "Bomber",
+    "eyes": "VR",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0784.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 514,
     "headItem": "Beanie",
     "body": "Brown",
@@ -4696,6 +4978,18 @@
     "isMinted": 1
   },
   {
+    "id": 527,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
+    "id": 528,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 530,
     "headItem": "Beanie",
     "body": "Pink",
@@ -4709,6 +5003,12 @@
     "ears": "Earbuds",
     "imageUrl": "https://images.anons.army/img/0823.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 531,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -4863,8 +5163,18 @@
   },
   {
     "id": 553,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Bandana",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Season1",
+    "baseLayer": "Hoodie",
+    "topLayer": "Tactical",
+    "eyes": "Eye Patch",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0859.jpg",
+    "revealed": 1,
     "isMinted": 1
   },
   {
@@ -5290,6 +5600,22 @@
     "isMinted": 1
   },
   {
+    "id": 596,
+    "headItem": "Bucket Hat",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Concrete",
+    "baseLayer": "Hoodie",
+    "topLayer": "Utility Jacket",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0957.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 598,
     "headItem": "Dad Hat",
     "body": "Grey",
@@ -5463,6 +5789,12 @@
     "ears": "Earbuds",
     "imageUrl": "https://images.anons.army/img/0987.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 615,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -5766,6 +6098,12 @@
     "isMinted": 1
   },
   {
+    "id": 645,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 646,
     "headItem": "Snapback",
     "body": "Green",
@@ -5974,6 +6312,12 @@
     "isMinted": 1
   },
   {
+    "id": 664,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 665,
     "headItem": "Dad Hat",
     "body": "Grey",
@@ -6050,6 +6394,22 @@
     "mouth": "Cigar",
     "ears": "Earbuds",
     "imageUrl": "https://images.anons.army/img/1524.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 673,
+    "headItem": "Cowboy",
+    "body": "Blue",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Hoodie",
+    "topLayer": "Backpack",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1115.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -6575,6 +6935,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1222.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 725,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -7198,6 +7564,12 @@
     "isMinted": 1
   },
   {
+    "id": 820,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 824,
     "headItem": "Beanie",
     "body": "Blue",
@@ -7211,6 +7583,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1451.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 826,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -7243,6 +7621,28 @@
     "ears": "Earring",
     "imageUrl": "https://images.anons.army/img/0207.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 832,
+    "headItem": "Bucket Hat",
+    "body": "Blue",
+    "tattoos": "No",
+    "backgrounds": "Season1",
+    "baseLayer": "Hoodie",
+    "topLayer": "Tactical",
+    "eyes": "Goggles",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0245.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 835,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -7297,6 +7697,12 @@
     "ears": "Earring",
     "imageUrl": "https://images.anons.army/img/1492.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 845,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -7360,6 +7766,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1508.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 858,
+    "headItem": "Beanie",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Tile",
+    "baseLayer": "Crew",
+    "topLayer": "Varsity",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1516.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -7476,6 +7898,18 @@
     "isMinted": 1
   },
   {
+    "id": 871,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
+    "id": 873,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 874,
     "headItem": "Dad Hat",
     "body": "Blue",
@@ -7505,6 +7939,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1552.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 876,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -7540,6 +7980,22 @@
     "isMinted": 1
   },
   {
+    "id": 882,
+    "headItem": "Wide Brim",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Concrete",
+    "baseLayer": "Crew",
+    "topLayer": "Utility Jacket",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bubble Gum",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1564.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 888,
     "headItem": "Snapback",
     "body": "Grey",
@@ -7552,6 +8008,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1577.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 889,
+    "headItem": "Tall Mountie",
+    "body": "Blue",
+    "tattoos": "No",
+    "backgrounds": "Wood",
+    "baseLayer": "Hawaiian Shirt",
+    "topLayer": "Backpack",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1578.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -7585,6 +8057,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1585.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 893,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -8018,6 +8496,22 @@
     "isMinted": 1
   },
   {
+    "id": 968,
+    "headItem": "Wide Brim",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Tile",
+    "baseLayer": "Crew",
+    "topLayer": "Utility Jacket",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bubble Gum",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1760.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 970,
     "headItem": "Cowboy",
     "body": "Blue",
@@ -8046,6 +8540,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1040.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 973,
+    "headItem": "Beanie",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Tuxedo",
+    "topLayer": "Backpack",
+    "eyes": "Gold Sunglass",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1768.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -8111,6 +8621,28 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1785.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 983,
+    "headItem": "Tall Mountie",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Wood",
+    "baseLayer": "Hoodie",
+    "topLayer": "Utility Jacket",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "Earbuds",
+    "imageUrl": "https://images.anons.army/img/1786.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 989,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -8264,6 +8796,12 @@
     "isMinted": 1
   },
   {
+    "id": 1007,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1008,
     "headItem": "Dad Hat",
     "body": "Pink",
@@ -8277,6 +8815,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1131.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1009,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -8522,6 +9066,38 @@
     "isMinted": 1
   },
   {
+    "id": 1052,
+    "headItem": "Snapback",
+    "body": "Brown",
+    "tattoos": "Yes",
+    "backgrounds": "Plaster",
+    "baseLayer": "Hoodie",
+    "topLayer": "Backpack",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bubble Gum",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1916.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1062,
+    "headItem": "Bucket Hat",
+    "body": "Brown",
+    "tattoos": "Yes",
+    "backgrounds": "Season1",
+    "baseLayer": "Hawaiian Shirt",
+    "topLayer": "None",
+    "eyes": "None",
+    "neck": "Gold",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1943.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 1063,
     "imageUrl": null,
     "revealed": 0,
@@ -8562,6 +9138,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1952.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1070,
+    "headItem": "Bucket Hat",
+    "body": "Green",
+    "tattoos": "No",
+    "backgrounds": "Season1",
+    "baseLayer": "Hoodie",
+    "topLayer": "Tactical",
+    "eyes": "Balaclava",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1954.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -8694,6 +9286,22 @@
     "isMinted": 1
   },
   {
+    "id": 1091,
+    "headItem": "Snapback",
+    "body": "Green",
+    "tattoos": "Yes",
+    "backgrounds": "Season1",
+    "baseLayer": "Hoodie",
+    "topLayer": "Utility Jacket",
+    "eyes": "Eye Patch",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1992.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 1092,
     "headItem": "Beanie",
     "body": "Brown",
@@ -8707,6 +9315,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1998.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1096,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -8755,6 +9369,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/2022.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1105,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -8946,6 +9566,12 @@
     "isMinted": 1
   },
   {
+    "id": 1138,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1139,
     "headItem": "Dad Hat",
     "body": "Brown",
@@ -8974,6 +9600,34 @@
     "mouth": "None",
     "ears": "Earbuds",
     "imageUrl": "https://images.anons.army/img/2105.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1146,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
+    "id": 1148,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
+    "id": 1149,
+    "headItem": "Snapback",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Hoodie",
+    "topLayer": "Tactical",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2125.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -9096,6 +9750,12 @@
     "isMinted": 1
   },
   {
+    "id": 1173,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1174,
     "headItem": "Bucket Hat",
     "body": "Blue",
@@ -9156,6 +9816,28 @@
     "mouth": "Bandana",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/2188.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1178,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
+    "id": 1179,
+    "headItem": "Bucket Hat",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Crew",
+    "topLayer": "Puffer Jacket",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Cigar",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2192.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -9512,6 +10194,22 @@
     "isMinted": 1
   },
   {
+    "id": 1222,
+    "headItem": "Beanie",
+    "body": "Blue",
+    "tattoos": "Yes",
+    "backgrounds": "Rust",
+    "baseLayer": "Hoodie",
+    "topLayer": "Utility Jacket",
+    "eyes": "Gold Sunglass",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2280.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 1223,
     "headItem": "Bucket Hat",
     "body": "Brown",
@@ -9573,6 +10271,12 @@
     "ears": "Earring",
     "imageUrl": "https://images.anons.army/img/2289.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1229,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -9720,6 +10424,12 @@
     "isMinted": 1
   },
   {
+    "id": 1244,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1246,
     "headItem": "Beanie",
     "body": "Brown",
@@ -9796,6 +10506,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/2351.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1254,
+    "headItem": "Wide Brim",
+    "body": "Grey",
+    "tattoos": "Yes",
+    "backgrounds": "Plaster",
+    "baseLayer": "Tuxedo",
+    "topLayer": "None",
+    "eyes": "Gold Sunglass",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2353.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -9966,6 +10692,12 @@
     "isMinted": 1
   },
   {
+    "id": 1271,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1273,
     "headItem": "Bucket Hat",
     "body": "Blue",
@@ -10122,6 +10854,22 @@
     "mouth": "Vape",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/2433.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1288,
+    "headItem": "Cowboy",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Tuxedo",
+    "topLayer": "None",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Vape",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2444.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -10432,6 +11180,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/2519.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1318,
+    "headItem": "Tall Mountie",
+    "body": "Brown",
+    "tattoos": "No",
+    "backgrounds": "Season1",
+    "baseLayer": "Bare",
+    "topLayer": "Puffer Vest",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "Earring",
+    "imageUrl": "https://images.anons.army/img/2532.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -10996,6 +11760,22 @@
     "isMinted": 1
   },
   {
+    "id": 1364,
+    "headItem": "Snapback",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Plaster",
+    "baseLayer": "Tuxedo",
+    "topLayer": "None",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bubble Gum",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2658.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 1369,
     "headItem": "Crown",
     "body": "Grey",
@@ -11322,6 +12102,12 @@
     "isMinted": 1
   },
   {
+    "id": 1407,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1411,
     "headItem": "Cowboy",
     "body": "Grey",
@@ -11447,6 +12233,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/2796.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1428,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -12032,6 +12824,12 @@
     "isMinted": 1
   },
   {
+    "id": 1479,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1481,
     "headItem": "Snapback",
     "body": "Blue",
@@ -12342,6 +13140,12 @@
     "isMinted": 1
   },
   {
+    "id": 1512,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1513,
     "headItem": "Bandana",
     "body": "Grey",
@@ -12354,6 +13158,22 @@
     "mouth": "Bubble Gum",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/2988.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1514,
+    "headItem": "Wide Brim",
+    "body": "Green",
+    "tattoos": "Yes",
+    "backgrounds": "Season1",
+    "baseLayer": "Tuxedo",
+    "topLayer": "None",
+    "eyes": "Balaclava",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2990.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -12406,6 +13226,22 @@
     "isMinted": 1
   },
   {
+    "id": 1519,
+    "headItem": "Bucket Hat",
+    "body": "Blue",
+    "tattoos": "Yes",
+    "backgrounds": "Plaster",
+    "baseLayer": "Hoodie",
+    "topLayer": "None",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2999.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 1520,
     "headItem": "Crown",
     "body": "Brown",
@@ -12454,6 +13290,22 @@
     "isMinted": 1
   },
   {
+    "id": 1525,
+    "headItem": "Dad Hat",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Plaster",
+    "baseLayer": "Crew",
+    "topLayer": "Bomber",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "Earbuds",
+    "imageUrl": "https://images.anons.army/img/3012.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 1527,
     "headItem": "Tall Mountie",
     "body": "Blue",
@@ -12467,6 +13319,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/3014.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1531,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -12579,6 +13437,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/1527.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1546,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -12722,6 +13586,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/3092.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1564,
+    "headItem": "Tall Mountie",
+    "body": "Brown",
+    "tattoos": "No",
+    "backgrounds": "Concrete",
+    "baseLayer": "Hawaiian Shirt",
+    "topLayer": "None",
+    "eyes": "Gas Mask",
+    "neck": "Diamond",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/3102.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -13070,6 +13950,12 @@
     "isMinted": 1
   },
   {
+    "id": 1614,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1615,
     "headItem": "Bucket Hat",
     "body": "Grey",
@@ -13211,6 +14097,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/3240.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1628,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -13525,8 +14417,18 @@
   },
   {
     "id": 1656,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Dad Hat",
+    "body": "Grey",
+    "tattoos": "Yes",
+    "backgrounds": "Rust",
+    "baseLayer": "Bare",
+    "topLayer": "Puffer Vest",
+    "eyes": "Gas Mask",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/3304.jpg",
+    "revealed": 1,
     "isMinted": 1
   },
   {
@@ -13578,6 +14480,12 @@
     "isMinted": 1
   },
   {
+    "id": 1660,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1661,
     "headItem": "Beanie",
     "body": "Blue",
@@ -13591,6 +14499,12 @@
     "ears": "Earbuds",
     "imageUrl": "https://images.anons.army/img/3319.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1664,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -13611,8 +14525,18 @@
   },
   {
     "id": 1666,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Bandana",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Wood",
+    "baseLayer": "Hoodie",
+    "topLayer": "Backpack",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bubble Gum",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/3330.jpg",
+    "revealed": 1,
     "isMinted": 1
   },
   {
@@ -13628,6 +14552,22 @@
     "mouth": "Bubble Gum",
     "ears": "Earbuds",
     "imageUrl": "https://images.anons.army/img/3331.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1668,
+    "headItem": "Snapback",
+    "body": "Blue",
+    "tattoos": "No",
+    "backgrounds": "Wood",
+    "baseLayer": "Hoodie",
+    "topLayer": "Backpack",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bubble Gum",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/3332.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -13702,6 +14642,22 @@
     "isMinted": 1
   },
   {
+    "id": 1674,
+    "headItem": "Beanie",
+    "body": "Brown",
+    "tattoos": "Yes",
+    "backgrounds": "Season1",
+    "baseLayer": "Crew",
+    "topLayer": "Utility Jacket",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/3346.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 1675,
     "headItem": "Tall Mountie",
     "body": "Pink",
@@ -13714,6 +14670,22 @@
     "mouth": "Bubble Gum",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/3349.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1678,
+    "headItem": "Dad Hat",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Tile",
+    "baseLayer": "Tuxedo",
+    "topLayer": "None",
+    "eyes": "Goggles",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1470.jpg",
     "revealed": 1,
     "isMinted": 1
   },
@@ -13731,6 +14703,12 @@
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/3359.jpg",
     "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1681,
+    "imageUrl": null,
+    "revealed": 0,
     "isMinted": 1
   },
   {
@@ -13948,6 +14926,22 @@
     "isMinted": 1
   },
   {
+    "id": 1708,
+    "headItem": "Tall Mountie",
+    "body": "Grey",
+    "tattoos": "Yes",
+    "backgrounds": "Concrete",
+    "baseLayer": "Crew",
+    "topLayer": "Bomber",
+    "eyes": "Gold Sunglass",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/3427.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
     "id": 1709,
     "headItem": "Dad Hat",
     "body": "Brown",
@@ -14124,6 +15118,12 @@
     "isMinted": 1
   },
   {
+    "id": 1729,
+    "imageUrl": null,
+    "revealed": 0,
+    "isMinted": 1
+  },
+  {
     "id": 1730,
     "headItem": "Snapback",
     "body": "Blue",
@@ -14232,6 +15232,22 @@
     "mouth": "None",
     "ears": "None",
     "imageUrl": "https://images.anons.army/img/3498.jpg",
+    "revealed": 1,
+    "isMinted": 1
+  },
+  {
+    "id": 1740,
+    "headItem": "Wide Brim",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Concrete",
+    "baseLayer": "Hoodie",
+    "topLayer": "Backpack",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/3499.jpg",
     "revealed": 1,
     "isMinted": 1
   }

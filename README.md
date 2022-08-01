@@ -12,7 +12,7 @@ Any traits that is set to `None` is treated as any other trait. An NFT with all 
 
 ## Website
 
-A website is available at https://anons2.rigwild.dev/
+A website is available at [anons2.rigwild.dev](https://anons2.rigwild.dev/)
 
 ![website screenshot](./screenshot.webp)
 
