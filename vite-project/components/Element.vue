@@ -6,18 +6,19 @@ import { Element, categories } from '../../types'
 const { element, elementIndex } = defineProps<{ element: Element; elementIndex: number }>()
 const blockHeight = getElementBlockHeight(elementIndex)
 
-let imageUrl = ref('/placeholder.jpg')
+// Try to get the compressed image version URL sitting at `/elements-images/<element>.webp`
+let imageCompressedUrl: string = ''
+if (element.revealed) {
+  imageCompressedUrl = new URL(element.imageUrl).pathname.split('/').slice(-1)[0]
+  imageCompressedUrl = `/elements-images/${imageCompressedUrl.split('.').slice(0, -1).join('.')}.webp`
+}
+let imageUrl = ref(element.revealed ? imageCompressedUrl : '/placeholder.jpg')
 onMounted(async () => {
   if (element.revealed) {
-    // Try to get the compressed image version URL sitting at `/elements-images/<element>.webp`
-    let imageCompressedUrl = new URL(element.imageUrl).pathname.split('/').slice(-1)[0]
-    imageCompressedUrl = `/elements-images/${imageCompressedUrl.split('.').slice(0, -1).join('.')}.webp`
-
     // Check the image is present in assets (if not present, it means this one is a new one
     // from the auto-update script and was and not yet compressed/included in the deployment assets)
     // See the README "Automatically update the website" section for more information
     const res = await fetch(imageCompressedUrl)
-
     if (res.ok && res.headers.get('content-type')?.includes('image')) {
       imageUrl.value = imageCompressedUrl
     } else {
@@ -35,16 +36,15 @@ onMounted(async () => {
         <img :src="imageUrl" :alt="`element ${element.id}`" />
       </div>
       <div class="element-stats">
-        <h2>
-          Anon S2 #{{ element.id }}
-          <span v-if="element.revealed"
-            >(Rank {{ rarity.elements[(element.id + '') as keyof typeof rarity.elements].rank }} /
-            {{ elementsFixed.length }})</span
-          >
-          <router-link :to="`/element/${element.id}`" class="pointer">🔗</router-link>
-        </h2>
+        <div class="element-title">
+          <h2>
+            Anon S2 #{{ element.id }}
+            <!-- <router-link :to="`/element/${element.id}`" class="link-emoji">🔗</router-link> -->
+          </h2>
+          <!-- prettier-ignore -->
+          <h3 v-if="element.revealed">Rank {{ rarity.elements[(element.id + '') as keyof typeof rarity.elements].rank }} / {{ elementsFixed.length }}</h3>
+        </div>
         <div v-if="element.revealed">
-          <h4>Traits</h4>
           <table>
             <thead>
               <tr>
@@ -77,7 +77,7 @@ onMounted(async () => {
         </div>
         <h3>
           <span v-if="element.revealed">
-            Total Rarity Score:
+            Total Rarity Score
             {{ rarity.elements[(element.id + '') as keyof typeof rarity.elements].score.toFixed(3) }}
             -
           </span>
@@ -123,9 +123,23 @@ onMounted(async () => {
 .element-stats {
   width: 100%;
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  height: 100%;
 }
 
-/* Phone & tablet */
+.element-stats > .element-title > h2,
+.element-stats > .element-title > h3 {
+  margin: 5px 0;
+}
+
+.link-emoji {
+  margin-left: 5px;
+}
+
+/* Phone & Tablet */
 @media only screen and (max-width: 1280px) {
   .element-card {
     height: fit-content;
@@ -143,6 +157,13 @@ onMounted(async () => {
   }
   .element-stats {
     padding: 5px 0;
+  }
+  .element-stats > .element-title {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
   }
 }
 

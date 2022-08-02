@@ -27,9 +27,6 @@ body {
 .text-right {
   text-align: right;
 }
-.pointer {
-  cursor: pointer;
-}
 .actions {
   text-align: center;
   margin: 15px;
