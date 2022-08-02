@@ -80,8 +80,9 @@ const store = CloudFlareWorkersKV({
 async function run() {
   console.log('Updating Cloudflare Workers KV...')
   // Update data
-  await $`curl https://rest-api.anons.army/api/anons/s2 | jq > _input_elements.json`
-  const data = await fetch('https://rest-api.anons.army/api/anons/s2').then(res => res.json())
+  const data = await fetch(process.env.ELEMENTS_API_URI || 'https://rest-api.anons.army/api/anons/s2').then(res =>
+    res.json()
+  )
   await fs.writeFile('_input_elements.json', JSON.stringify(data, null, 2))
   await $`pnpm extractTraits`
   await $`pnpm exportScores`

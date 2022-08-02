@@ -49,22 +49,23 @@ TODO: Add hashes when minted out
 Download the latest data from the API, calculate the rarity from scratch and update the website.
 
 ```sh
-sudo apt install curl jq
 pnpm i -g zx @squoosh/cli
-./scripts/update_website.sh
+
+export ELEMENTS_API_URI='https://rest-api.anons.army/api/anons/s2'
+zx ./scripts/updateWebsite.mjs
 ```
 
 ## Get rankings of NFTs list
 
 ```sh
-pnpm build
-curl https://rest-api.anons.army/api/anons/s2 | jq > _input_elements.json && pnpm extractTraits && pnpm exportScores
-ANON='1300 1523 187 755 780 870'
-ANON='1300,1523 187| 755 -780;870' # any format, parameters are cleaned!
-zx scripts/getRanking.mjs $ANON ; zx scripts/getRanking.mjs $ANON | clipboard
+ELEMENTS='1300 1523 187 755 780 870'
+ELEMENTS='1300,1523 187| 755 -780;870' # any format, parameters are cleaned!
+zx scripts/getRanking.mjs $ELEMENTS ; zx scripts/getRanking.mjs $ELEMENTS | clipboard
+```
 
 Output (+ copied to clipboard):
 
+```
    187: Ranked   98 of 592 - score  77.08995339
    755: Ranked  265 of 592 - score  62.45316002
    780: Ranked  186 of 592 - score  67.95338584
@@ -77,7 +78,7 @@ Output (+ copied to clipboard):
 
 ## Reuse this project for your NFT collection
 
-This project is open source. You can reuse it for your project! ✌
+This project is open source. You can reuse it for your own project! ✌
 
 The only requirements are:
 
@@ -129,6 +130,7 @@ async function handleRequest(request) {
 Store the data into a Cloudflare Workers KV namespace. This script will update the data every 10 minutes.
 
 ```sh
+ELEMENTS_API_URI='https://rest-api.anons.army/api/anons/s2' \
 CLOUDFLARE_ACCOUNT_ID=<CLOUDFLARE_ACCOUNT_ID> \
 CLOUDFLARE_API_KEY=<CLOUDFLARE_API_KEY> \
 CLOUDFLARE_NAMESPACE_ID=<CLOUDFLARE_NAMESPACE_ID> \

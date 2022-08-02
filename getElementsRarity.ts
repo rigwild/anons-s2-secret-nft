@@ -1,29 +1,32 @@
 import { argv, fs } from 'zx'
-import { categories } from './types.js'
+import { categories as traitsCategories } from './types.js'
 import type { Element, ElementWithRarity, ElementsRarity, CategoryRarity, TraitRarity } from './types.js'
 
-const getTraits = async (category: string): Promise<string[]> => fs.readJson(`_input_traits_${category}.json`)
+const pad = (n: number | string, length = 4) => (n + '').padStart(length, ' ')
+const percent = (a: number, b: number) => (a / b) * 100
+const percentStr = (data: number, paddingLength = 5) => `${pad(data.toFixed(2), paddingLength)} %`
 
-const getElements = async (): Promise<Element[]> => fs.readJson('_input_elements.json')
+const traits = Object.fromEntries(
+  await Promise.all(
+    traitsCategories.map(async category => {
+      return [category, await fs.readJson(`_input_traits_${category}.json`)] as [string, string[]]
+    })
+  )
+)
+const elements: Element[] = await fs.readJson('_input_elements.json')
 
-const pad = (n, l = 4) => (n + '').padStart(l, ' ')
-const percent = (a, b) => (a / b) * 100
-const percentStr = (r, p = 5) => `${pad(r.toFixed(2), p)} %`
-
-const traitsArray = await Promise.all(categories.map(async x => [x, await getTraits(x)]))
-const traits = Object.fromEntries(traitsArray) as { [category: string]: string[] }
-const traitsCategories = Object.keys(traits)
-const elements = await getElements()
-// console.log(elements)
-
-// Replace elements null traits with "none"
+// Replace elements null traits with "None"
+const traitsCategoriesWithNullTraits = new Set<string>()
 elements.forEach(element =>
   traitsCategories.forEach(category => {
-    if (element[category] === null) element[category] = 'none'
+    if (element[category] === null) {
+      traitsCategoriesWithNullTraits.add(category)
+      element[category] = 'None'
+    }
   })
 )
-// Add "None" traits to categories
-traitsCategories.forEach(category => traits[category].push('none'))
+// Add "None" traits to categories that includes null traits
+traitsCategoriesWithNullTraits.forEach(category => traits[category].push('None'))
 
 const rarity: ElementsRarity = {} as any
 
@@ -45,20 +48,25 @@ rarity.categories = Object.entries(traits).reduce<Record<string, CategoryRarity>
   return acc
 }, {})
 
-// Elements rarity
+// Elements rarity, add up all traits score for each element
 // Compute scores https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c#2942
-const scores = elements.reduce<Record<string, number>>((acc, elements) => {
-  acc[elements.id] = traitsCategories.reduce<number>((acc, category) => {
-    if (!!elements[category]) return acc + rarity.categories[category][elements[category]].score
-    else return acc
-  }, 0)
+const elementsRarity = elements.reduce<Record<string, { score: number; traitsCount: 0 }>>((acc, element) => {
+  acc[element.id] = traitsCategories.reduce(
+    (acc, category) => {
+      if (!!element[category]) acc.score += rarity.categories[category][element[category]].score
+      if (!!element[category] && element[category] !== 'None') acc.traitsCount++
+      return acc
+    },
+    { score: 0, traitsCount: 0 }
+  )
   return acc
 }, {})
-// Compute rank
+
+// Compute ranks
 rarity.elements = Object.fromEntries(
-  Object.entries(scores)
-    .sort(([, ascore], [, bscore]) => bscore - ascore)
-    .map(([id, score], i) => [id, { score, rank: i + 1 }])
+  Object.entries(elementsRarity)
+    .sort(([, a], [, b]) => b.score - a.score)
+    .map(([id, elementRarity], i) => [id, { ...elementRarity, rank: i + 1 }])
 )
 // console.log(scores)
 // console.log(rarity.elements)
@@ -66,7 +74,7 @@ rarity.elements = Object.fromEntries(
 // Traits count rarity (bonus, not counted in scores)
 const countTraits = (element: Element) => {
   return traitsCategories.reduce(
-    (acc, category) => (!!element[category] && element[category] !== 'none' ? ++acc : acc),
+    (acc, category) => (!!element[category] && element[category] !== 'None' ? ++acc : acc),
     0
   )
 }
@@ -81,26 +89,60 @@ Object.entries(rarity.traitsAmountRarity).forEach(
 )
 // console.dir(rarity, { depth: null })
 
-// Merge
-const elementsWithRarity: ElementWithRarity[] = elements.map(element => {
-  const res: ElementWithRarity = { ...element } as any
-  res.rarity = {
+// Merge each element traits, rarity rank + score and traits rarity into one object
+/*
+[
+  {
+    "id": 1,
+    "headItem": "Helmet",
+    "body": "Brown",
+    "tattoos": "No",
+    "backgrounds": "Season1",
+    "baseLayer": "Crew",
+    "topLayer": "Tactical",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0004_Custom.jpg",
+    "revealed": 1,
+    "isMinted": 1,
+    "arweaveImageUrl": "https://arweave.net/Q8WrMqVjDp4vy1KvPeAiBdS4OX8BPTxP6blhEcvePII",
+    "rarity": {
+      "score": 82.32549644085665,
+      "traitsCount": 6,
+      "rank": 232,
+      "traits": {
+        "headItem": {
+          "count": 40,
+          "totalPercent": 2.2988505747126435,
+          "score": 43.5,
+          "name": "Helmet"
+        },
+        [...]
+      }
+    }
+  },
+  [...]
+]
+*/
+const elementsWithRarity: ElementWithRarity[] = elements.map(element => ({
+  ...element,
+  rarity: {
     ...rarity.elements[element.id],
     traits: {
-      headItem: { ...rarity.categories.headItem[element.headItem], name: element.headItem },
-      body: { ...rarity.categories.body[element.body], name: element.body },
-      tattoos: { ...rarity.categories.tattoos[element.tattoos], name: element.tattoos },
-      backgrounds: { ...rarity.categories.backgrounds[element.backgrounds], name: element.backgrounds },
-      baseLayer: { ...rarity.categories.baseLayer[element.baseLayer], name: element.baseLayer },
-      topLayer: { ...rarity.categories.topLayer[element.topLayer], name: element.topLayer },
-      eyes: { ...rarity.categories.eyes[element.eyes], name: element.eyes },
-      neck: { ...rarity.categories.neck[element.neck], name: element.neck },
-      mouth: { ...rarity.categories.mouth[element.mouth], name: element.mouth },
-      ears: { ...rarity.categories.ears[element.ears], name: element.ears }
+      ...(Object.fromEntries(
+        traitsCategories.map(category => [
+          category,
+          {
+            ...rarity.categories[category][element[category]],
+            name: element[category]
+          }
+        ])
+      ) as any)
     }
   }
-  return res
-})
+}))
 
 // Save as files
 if (argv.out) {
@@ -132,13 +174,14 @@ console.log()
 console.log('Traits Amount Rarity:')
 // console.log(rarity.traitsAmountRarity)
 Object.entries(rarity.traitsAmountRarity).forEach(([amount, { count, percent }]) =>
-  console.log(`  ${amount} traits: ${pad(count)} of ${elements.length} - ${percentStr(percent)}`)
+  console.log(`  ${pad(amount, 2)} traits: ${pad(count)} of ${elements.length} - ${percentStr(percent)}`)
 )
 
 console.log()
 console.log()
 const logElement = (id, score, rank) =>
   console.log(`  ${pad(id, 4)}: Ranked ${pad(rank)} of ${elements.length} - ` + `score ${pad(score.toFixed(8), 12)}`)
+
 console.log('Elements Rarity Score:')
 Object.entries(rarity.elements).forEach(([id, { score, rank }]) => logElement(id, score, rank))
 

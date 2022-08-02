@@ -1,4 +1,3 @@
 /node_modules
 /dist
-scripts/elements-images/source
-scripts/elements-images/compressed*
+scripts/elements-images

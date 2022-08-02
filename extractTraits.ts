@@ -9,6 +9,7 @@ const elements = await fs.readJSON('_input_elements.json')
 
 const traitsCategories = Object.fromEntries(categories.map(x => [x, new Set()]))
 
+console.log('Extracted traits:')
 for (const [category, set] of Object.entries(traitsCategories)) {
   elements.forEach(element => {
     // ignore `null`
@@ -18,5 +19,5 @@ for (const [category, set] of Object.entries(traitsCategories)) {
   // Export to input files
   const data = [...set].sort()
   await fs.writeJSON(`_input_traits_${category}.json`, data, { spaces: 2 })
-  console.log(data)
+  console.log(`  ${category}: ${data.join(',')}`)
 }
