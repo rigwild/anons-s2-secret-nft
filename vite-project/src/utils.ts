@@ -23,5 +23,5 @@ export const loadElementsData = async () => {
 const breakpoints = useBreakpoints({ laptop: 1280 })
 export const getElementBlockHeight = (index: number) => {
   if (breakpoints.isGreater('laptop')) return 560
-  else return elementsFixed[index]?.revealed ? 1250 : 650
+  else return elementsFixed[index]?.revealed ? 1250 : 720
 }

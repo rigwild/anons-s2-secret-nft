@@ -3,7 +3,21 @@ import { ref, onMounted } from 'vue'
 import { elementsFixed, rarity, getElementBlockHeight } from '../src/utils'
 import { Element, categories } from '../../types'
 
-const { element, elementIndex } = defineProps<{ element: Element; elementIndex: number }>()
+const { element, elementIndex, useTraitsCountRarity } = defineProps<{
+  element: Element
+  elementIndex: number
+  useTraitsCountRarity: boolean
+}>()
+
+const elementIdStr = `${element.id}` as unknown as keyof typeof rarity.elements
+const rank = useTraitsCountRarity
+  ? rarity.elements[elementIdStr].rank
+  : rarity.elements[elementIdStr].rankWithoutTraitsCount
+
+const score = useTraitsCountRarity
+  ? rarity.elements[elementIdStr].score
+  : rarity.elements[elementIdStr].scoreWithoutTraitsCount
+
 const blockHeight = getElementBlockHeight(elementIndex)
 
 // Try to get the compressed image version URL sitting at `/elements-images/<element>.webp`
@@ -41,8 +55,7 @@ onMounted(async () => {
             Anon S2 #{{ element.id }}
             <!-- <router-link :to="`/element/${element.id}`" class="link-emoji">🔗</router-link> -->
           </h2>
-          <!-- prettier-ignore -->
-          <h3 v-if="element.revealed">Rank {{ rarity.elements[(element.id + '') as keyof typeof rarity.elements].rank }} / {{ elementsFixed.length }}</h3>
+          <h3 v-if="element.revealed">Rank {{ rank }} / {{ elementsFixed.length }}</h3>
         </div>
         <div v-if="element.revealed">
           <table>
@@ -69,6 +82,20 @@ onMounted(async () => {
                   <td class="text-right">{{ rarity.categories[category][element[category]].score.toFixed(3) }}</td>
                 </tr>
               </template>
+              <tr>
+                <td :class="{ 'text-strike': !useTraitsCountRarity }">Traits Count</td>
+                <td :class="{ 'text-strike': !useTraitsCountRarity }">{{ rarity.elements[element.id].traitsCount }}</td>
+                <td class="text-right" :class="{ 'text-strike': !useTraitsCountRarity }">
+                  {{ rarity.traitsCountRarity[rarity.elements[element.id].traitsCount].count }} /
+                  {{ elementsFixed.length }}
+                </td>
+                <td class="text-right" :class="{ 'text-strike': !useTraitsCountRarity }">
+                  {{ rarity.traitsCountRarity[rarity.elements[element.id].traitsCount].totalPercent.toFixed(3) }} %
+                </td>
+                <td class="text-right" :class="{ 'text-strike': !useTraitsCountRarity }">
+                  {{ rarity.traitsCountRarity[rarity.elements[element.id].traitsCount].score.toFixed(3) }}
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -78,7 +105,7 @@ onMounted(async () => {
         <h3>
           <span v-if="element.revealed">
             Total Rarity Score
-            {{ rarity.elements[(element.id + '') as keyof typeof rarity.elements].score.toFixed(3) }}
+            {{ score.toFixed(3) }}
             -
           </span>
           <a

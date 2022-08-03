@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import Home from './Home.vue'
-import ElementSolo from './ElementSolo.vue'
 import { loadElementsData } from './utils'
 
 loadElementsData().then(() => {
@@ -11,10 +10,9 @@ loadElementsData().then(() => {
     routes: [
       {
         path: '/',
-        component: Home,
-        props: route => ({ sortBy: route.query.sortBy || 'id', filterTrait: route.query.filterTrait || '' })
+        component: Home
       },
-      { path: '/element/:elementId', component: ElementSolo, props: true }
+      { path: '/element/:elementId', redirect: to => ({ path: '/', query: { id: to.params.elementId } }) }
     ]
   })
 

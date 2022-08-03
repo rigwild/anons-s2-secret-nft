@@ -8,10 +8,6 @@
   </div>
 
   <h1 class="text-center">Anons S2 "The Army" NFT Rarity Scores</h1>
-  <div class="actions">
-    <router-link to="/?sortBy=id"><button>Show Anons S2 by ID</button></router-link>
-    <router-link to="/?sortBy=score"><button>Show Anons S2 by Score</button></router-link>
-  </div>
 
   <router-view></router-view>
 </template>
@@ -27,10 +23,10 @@ body {
 .text-right {
   text-align: right;
 }
-.actions {
-  text-align: center;
-  margin: 15px;
+.text-strike {
+  text-decoration: line-through;
 }
+
 .credits {
   text-align: center;
   margin: 15px;
