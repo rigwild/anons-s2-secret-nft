@@ -6491,10 +6491,20 @@
   },
   {
     "id": 401,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Cowboy",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Plaster",
+    "baseLayer": "Tuxedo",
+    "topLayer": "None",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0530.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/VrWDJ1xBBeasoiUA5xbbk1Bih6sPmxc1cUV6azwBKyI"
   },
   {
     "id": 402,
@@ -8772,10 +8782,20 @@
   },
   {
     "id": 544,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Wide Brim",
+    "body": "Grey",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Hoodie",
+    "topLayer": "Denim",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Cigar",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0848.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/Nn1hFVc1xJWEyHVu1F0kz5eUQxWdmnAmFiSqLOEd1aA"
   },
   {
     "id": 545,
@@ -9674,10 +9694,20 @@
   },
   {
     "id": 600,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Beanie",
+    "body": "Green",
+    "tattoos": "Yes",
+    "backgrounds": "Tile",
+    "baseLayer": "Hawaiian Shirt",
+    "topLayer": "None",
+    "eyes": "Gold Sunglass",
+    "neck": "None",
+    "mouth": "Bandana",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0964.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/ohhzgarZ28apNvQ7pZGVseJYCD4ybSMjCdBrGs19JX4"
   },
   {
     "id": 601,
@@ -16851,10 +16881,20 @@
   },
   {
     "id": 1051,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Wide Brim",
+    "body": "Pink",
+    "tattoos": "Yes",
+    "backgrounds": "Plaster",
+    "baseLayer": "Hoodie",
+    "topLayer": "Puffer Jacket",
+    "eyes": "Balaclava",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1914.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/qBAjB3eX3MdMH3qpWmSV6hdqwfhpksq__y2DutSnLzk"
   },
   {
     "id": 1052,
@@ -19683,10 +19723,20 @@
   },
   {
     "id": 1227,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Dad Hat",
+    "body": "Green",
+    "tattoos": "Yes",
+    "backgrounds": "Plaster",
+    "baseLayer": "Hoodie",
+    "topLayer": "Tactical",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2290.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/TGwejfG7F-eJZzO8nU4Ji8Lh0bq7vADUls7vwHfkk1A"
   },
   {
     "id": 1228,
