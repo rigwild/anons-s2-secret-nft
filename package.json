@@ -4,7 +4,6 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "extractTraits": "node dist/extractTraits.js",
     "getScores": "node dist/getElementsRarity.js",
     "exportScores": "node dist/getElementsRarity.js --quiet --out > _output_results.log",
     "getScoresJson": "node dist/getElementsRarity.js --quiet --json",

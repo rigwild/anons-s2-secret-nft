@@ -6,7 +6,9 @@ Anons S1 "OGs" NFTs rarity scores: [rigwild/anons-secret-nft](https://github.com
 
 The rarity score is calculed following [these formulas (`Rarity Score: How is it Calculated?` section)](https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c#2942). A rarity score can be calculated in a lot of different ways with each their specific strengths and flaws. **This is not an official ranking.**
 
-Any traits that is set to `None` is treated as any other trait. An NFT with all traits to `None` would then be very rare. **It counts in the scores**.
+Any traits that is set to `No` is renamed to `None`. `None` is treated as any other trait, **it counts in the scores!** An NFT with all traits to `None` would then be very rare.
+
+The count of traits rarity is calculated, but the scores and ranks without it are also provided. You can toggle it in the website.
 
 ⭐ Star the project! ⭐
 
@@ -29,7 +31,6 @@ A website is available at [anons2.rigwild.dev](https://anons2.rigwild.dev/)
 ```sh
 pnpm install
 pnpm build
-pnpm extractTraits
 pnpm exportScores
 ```
 
@@ -39,7 +40,11 @@ SHA256 hashes:
 
 ```
 $ sha256sum _*
-TODO: Add hashes when minted out
+bfc2697c7ca287449a47e270ba586b752ae8ec6a484fa98b9321da1801dddc4b  _input_elements.json
+02e4d94570523542bc5dc8b9cdff3724b28461d09da028a423a203dd9aa950d1  _output_elementsNullTraitsAsNone.json
+970145e644f8da86205e36cfa4e2c68b9a030ecdfc0d15b60f0677b64f74f8f4  _output_elementsWithRarity.json
+268a995ad6b80b4462e59d234129e675952fbc579131f58448666da250edd363  _output_rarity.json
+994582457a0adc9fb44b1ff41a617a7cdb826fdca225cb2a0d927e70e4c96cde  _output_results.log
 ```
 
 **Note:** Your hashes may be different if you just updated the data, as some nft were probably revealed since my hashes were produced.

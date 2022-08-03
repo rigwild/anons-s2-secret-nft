@@ -31,11 +31,17 @@ export const categories = [
 
 export type TraitRarity = { count: number; totalPercent: number; score: number }
 export type CategoryRarity = { [trait: string]: TraitRarity }
-export type ElementRarity = { score: number; rank: number }
+export type ElementRarity = {
+  score: number
+  scoreWithoutTraitsCount: number
+  traitsCount: number
+  rank: number
+  rankWithoutTraitsCount: number
+}
 export type ElementsRarity = {
   elements: { [id: number]: ElementRarity }
   categories: { [category: string]: CategoryRarity }
-  traitsAmountRarity: { [traitsCount: string]: { count: number; percent: number } }
+  traitsCountRarity: { [traitsCount: string]: TraitRarity }
 }
 
 export type ElementTraitInfo = TraitRarity & { name: string }

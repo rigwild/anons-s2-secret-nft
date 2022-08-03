@@ -12,7 +12,7 @@ const data = await fetch(process.env.ELEMENTS_API_URI || 'https://rest-api.anons
   res.json()
 )
 await fs.writeFile('_input_elements.json', JSON.stringify(data, null, 2))
-await $`pnpm extractTraits`
+await $`pnpm build`
 await $`pnpm exportScores`
 
 await $`zx ./scripts/imagesDownload.mjs`

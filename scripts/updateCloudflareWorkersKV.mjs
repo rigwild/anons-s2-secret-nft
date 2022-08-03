@@ -84,7 +84,6 @@ async function run() {
     res.json()
   )
   await fs.writeFile('_input_elements.json', JSON.stringify(data, null, 2))
-  await $`pnpm extractTraits`
   await $`pnpm exportScores`
 
   // Update Cloudflare Workers KV

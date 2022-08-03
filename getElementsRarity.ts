@@ -1,32 +1,31 @@
 import { argv, fs } from 'zx'
 import { categories as traitsCategories } from './types.js'
-import type { Element, ElementWithRarity, ElementsRarity, CategoryRarity, TraitRarity } from './types.js'
+import type { Element, ElementWithRarity, ElementRarity, ElementsRarity, CategoryRarity, TraitRarity } from './types.js'
 
 const pad = (n: number | string, length = 4) => (n + '').padStart(length, ' ')
 const percent = (a: number, b: number) => (a / b) * 100
 const percentStr = (data: number, paddingLength = 5) => `${pad(data.toFixed(2), paddingLength)} %`
 
-const traits = Object.fromEntries(
-  await Promise.all(
-    traitsCategories.map(async category => {
-      return [category, await fs.readJson(`_input_traits_${category}.json`)] as [string, string[]]
-    })
-  )
-)
-const elements: Element[] = await fs.readJson('_input_elements.json')
-
-// Replace elements null traits with "None"
-const traitsCategoriesWithNullTraits = new Set<string>()
-elements.forEach(element =>
+const elements: Element[] = (await fs.readJson('_input_elements.json')).map((element: Element) => {
   traitsCategories.forEach(category => {
-    if (element[category] === null) {
-      traitsCategoriesWithNullTraits.add(category)
+    // Replace traits null or named "No" by "None"
+    if (element[category] === null || element[category] === 'No') {
       element[category] = 'None'
     }
   })
-)
-// Add "None" traits to categories that includes null traits
-traitsCategoriesWithNullTraits.forEach(category => traits[category].push('None'))
+  return element
+})
+
+// Extract all traits for each categories
+const traits: { [category: string]: Array<string | number> } = {}
+traitsCategories.forEach(category => {
+  const traitsSet = new Set<string>()
+  elements.forEach(element => {
+    if (element[category]) traitsSet.add(element[category])
+  })
+  const data = [...traitsSet].sort()
+  traits[category] = data
+})
 
 const rarity: ElementsRarity = {} as any
 
@@ -48,46 +47,62 @@ rarity.categories = Object.entries(traits).reduce<Record<string, CategoryRarity>
   return acc
 }, {})
 
-// Elements rarity, add up all traits score for each element
-// Compute scores https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c#2942
-const elementsRarity = elements.reduce<Record<string, { score: number; traitsCount: 0 }>>((acc, element) => {
-  acc[element.id] = traitsCategories.reduce(
-    (acc, category) => {
-      if (!!element[category]) acc.score += rarity.categories[category][element[category]].score
-      if (!!element[category] && element[category] !== 'None') acc.traitsCount++
-      return acc
-    },
-    { score: 0, traitsCount: 0 }
-  )
-  return acc
-}, {})
-
-// Compute ranks
-rarity.elements = Object.fromEntries(
-  Object.entries(elementsRarity)
-    .sort(([, a], [, b]) => b.score - a.score)
-    .map(([id, elementRarity], i) => [id, { ...elementRarity, rank: i + 1 }])
-)
-// console.log(scores)
-// console.log(rarity.elements)
-
-// Traits count rarity (bonus, not counted in scores)
-const countTraits = (element: Element) => {
+// Traits count rarity
+const countTraits = (element: Element): number | null => {
   return traitsCategories.reduce(
     (acc, category) => (!!element[category] && element[category] !== 'None' ? ++acc : acc),
     0
   )
 }
-rarity.traitsAmountRarity = elements.reduce((acc, element) => {
+rarity.traitsCountRarity = elements.reduce((acc, element) => {
   const count = countTraits(element)
-  if (count in acc) acc[count].count++
-  else acc[count] = { count: 1 }
+  if (!(count in acc)) acc[count] = { count: 0 }
+  acc[count].count++
   return acc
 }, {})
-Object.entries(rarity.traitsAmountRarity).forEach(
-  ([amount, { count }]) => (rarity.traitsAmountRarity[amount].percent = percent(count, elements.length))
-)
+Object.entries(rarity.traitsCountRarity).forEach(([tcount, { count }]) => {
+  rarity.traitsCountRarity[tcount].totalPercent = percent(count, elements.length)
+  rarity.traitsCountRarity[tcount].score = 1 / (count / elements.length)
+})
 // console.dir(rarity, { depth: null })
+
+// Elements rarity
+// Compute scores
+// Add up (+) all traits score  for each element
+const elementsRarity = elements.reduce<Record<string, Omit<ElementRarity, 'rank' | 'rankWithoutTraitsCount'>>>(
+  (acc, element) => {
+    const elementRarity = traitsCategories.reduce(
+      (tacc, tcategory) => {
+        if (!!element[tcategory]) {
+          tacc.score += rarity.categories[tcategory][element[tcategory]].score
+          tacc.scoreWithoutTraitsCount += rarity.categories[tcategory][element[tcategory]].score
+        }
+        if (!!element[tcategory] && element[tcategory] !== 'None') tacc.traitsCount++
+        return tacc
+      },
+      { score: 0, scoreWithoutTraitsCount: 0, traitsCount: 0 }
+    )
+    acc[element.id] = elementRarity
+    return acc
+  },
+  {}
+)
+// Add count of trait rarity score for each element
+Object.values(elementsRarity).forEach(elementRarity => {
+  elementRarity.score += rarity.traitsCountRarity[elementRarity.traitsCount].score
+})
+
+// Compute ranks
+rarity.elements = elementsRarity as any
+// Compute ranks with traits count score
+Object.entries(elementsRarity)
+  .sort(([, a], [, b]) => b.score - a.score)
+  .forEach(([id, elementRarity], i) => (rarity.elements[id].rank = i + 1))
+// Compute ranks without traits count score
+Object.entries(elementsRarity)
+  .sort(([, a], [, b]) => b.scoreWithoutTraitsCount - a.scoreWithoutTraitsCount)
+  .forEach(([id, elementRarity], i) => (rarity.elements[id].rankWithoutTraitsCount = i + 1))
+// console.log(rarity.elements)
 
 // Merge each element traits, rarity rank + score and traits rarity into one object
 /*
@@ -110,8 +125,10 @@ Object.entries(rarity.traitsAmountRarity).forEach(
     "arweaveImageUrl": "https://arweave.net/Q8WrMqVjDp4vy1KvPeAiBdS4OX8BPTxP6blhEcvePII",
     "rarity": {
       "score": 82.32549644085665,
+      "scoreWithoutTraitsCount": 82.32549644085665,
       "traitsCount": 6,
       "rank": 232,
+      "rankWithoutTraitsCount": 232,
       "traits": {
         "headItem": {
           "count": 40,
@@ -157,29 +174,43 @@ if (argv.json) {
   process.exit(0)
 }
 
+console.log(`List of Traits:`)
+Object.entries(traits).forEach(([category, traits]) => {
+  console.log(`  ${category}: ${traits.join(', ')}`)
+})
+console.log()
 console.log(`Total Minted Elements: ${elements.length}`)
 console.log()
 
-console.log('Traits rarity:\n')
+console.log('Traits Rarity:')
 Object.entries(rarity.categories).forEach(([categoryName, categoryRarity]) => {
-  console.log(`${categoryName}`)
+  console.log(`  ${categoryName}`)
 
-  Object.entries(categoryRarity).forEach(([trait, { count, totalPercent }]) =>
-    console.log(`  ${pad(count)} of ${elements.length} - ${percentStr(totalPercent)} - ${trait}`)
+  Object.entries(categoryRarity).forEach(([trait, { count, totalPercent, score }]) =>
+    console.log(
+      `    ${pad(count)} of ${elements.length} - ` +
+        `${percentStr(totalPercent)} - ` +
+        `score ${pad(score.toFixed(8), 12)} ${trait}`
+    )
   )
   console.log()
 })
 
 console.log()
-console.log('Traits Amount Rarity:')
-// console.log(rarity.traitsAmountRarity)
-Object.entries(rarity.traitsAmountRarity).forEach(([amount, { count, percent }]) =>
-  console.log(`  ${pad(amount, 2)} traits: ${pad(count)} of ${elements.length} - ${percentStr(percent)}`)
+console.log('Traits count Rarity:')
+// console.log(rarity.traitsCountRarity)
+Object.entries(rarity.traitsCountRarity).forEach(([tcount, { count, totalPercent, score }]) =>
+  console.log(
+    `  ${pad(count)} of ${elements.length} - ` +
+      `${percentStr(totalPercent)} - ` +
+      `score ${pad(score.toFixed(8), 12)} - ` +
+      `${pad(tcount, 2)} traits`
+  )
 )
 
 console.log()
 console.log()
-const logElement = (id, score, rank) =>
+const logElement = (id: string, score: number, rank: number) =>
   console.log(`  ${pad(id, 4)}: Ranked ${pad(rank)} of ${elements.length} - ` + `score ${pad(score.toFixed(8), 12)}`)
 
 console.log('Elements Rarity Score:')
@@ -191,3 +222,19 @@ console.log('Elements Rarity Score (sorted):')
 Object.entries(rarity.elements)
   .sort((a, b) => b[1].score - a[1].score)
   .forEach(([id, { score, rank }]) => logElement(id, score, rank))
+
+console.log()
+console.log()
+console.log('Elements Rarity Score without traits count score:')
+Object.entries(rarity.elements).forEach(([id, { scoreWithoutTraitsCount, rankWithoutTraitsCount }]) =>
+  logElement(id, scoreWithoutTraitsCount, rankWithoutTraitsCount)
+)
+
+console.log()
+console.log()
+console.log('Elements Rarity Score without traits count score(sorted):')
+Object.entries(rarity.elements)
+  .sort((a, b) => b[1].score - a[1].score)
+  .forEach(([id, { scoreWithoutTraitsCount, rankWithoutTraitsCount }]) =>
+    logElement(id, scoreWithoutTraitsCount, rankWithoutTraitsCount)
+  )
