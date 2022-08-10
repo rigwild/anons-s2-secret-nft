@@ -19,3 +19,11 @@ await $`zx ./scripts/imagesDownload.mjs`
 await $`zx ./scripts/imagesSquoosh.mjs`
 await $`rm ./vite-project/public/elements-images/*.webp`
 await $`cp ./scripts/elements-images/compressed/* vite-project/public/elements-images`
+
+// Update SHA256 hashes
+const { stdout: hashes } = await $`sha256sum _*`
+let README = (await fs.readFile('README.md', 'utf8')).replace(
+  /sha256sum _*[\s\S]*?\`\`\`/,
+  `sha256sum _*\n${hashes.trim()}\n\`\`\``
+)
+await fs.writeFile('README.md', README)

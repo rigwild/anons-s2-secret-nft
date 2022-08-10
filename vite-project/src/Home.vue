@@ -49,7 +49,7 @@ const filterElementsByTrait = () => {
   } else {
     filterId.value = ''
     elements.value = elementsFixed.filter(element =>
-      categories.some(category => element[category]?.toLowerCase().includes(filterTrait.value))
+      categories.some(category => element[category]?.toLowerCase().includes(filterTrait.value.toLowerCase()))
     )
   }
 }
