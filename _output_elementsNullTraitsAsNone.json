@@ -2571,10 +2571,20 @@
   },
   {
     "id": 161,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Tall Mountie",
+    "body": "Blue",
+    "tattoos": "None",
+    "backgrounds": "Tile",
+    "baseLayer": "Crew",
+    "topLayer": "Utility Jacket",
+    "eyes": "None",
+    "neck": "Gold",
+    "mouth": "Vape",
+    "ears": "Earbuds",
+    "imageUrl": "https://images.anons.army/img/0435_Last_500.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/_4nNETiar_IE_7iKDaXNVBSGxsx0Iv783gqbmwmUb7c"
   },
   {
     "id": 162,
@@ -4997,10 +5007,20 @@
   },
   {
     "id": 309,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Beanie",
+    "body": "Brown",
+    "tattoos": "Yes",
+    "backgrounds": "Rust",
+    "baseLayer": "Hoodie",
+    "topLayer": "Puffer Vest",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "Bubble Gum",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/0337.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/3cE-pHW3i9KLt1Q88zWsfkLgIrNfzceT_Aw72xcmzhU"
   },
   {
     "id": 310,
@@ -11204,10 +11224,20 @@
   },
   {
     "id": 690,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Bucket Hat",
+    "body": "Grey",
+    "tattoos": "None",
+    "backgrounds": "Plaster",
+    "baseLayer": "Bare",
+    "topLayer": "Varsity",
+    "eyes": "None",
+    "neck": "Diamond",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1160.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/wx9aNWUryW4QmDx0BgfGkRfcbLl0ACa2kwvfOy_--kc"
   },
   {
     "id": 691,
@@ -18030,10 +18060,20 @@
   },
   {
     "id": 1118,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Cowboy",
+    "body": "Brown",
+    "tattoos": "None",
+    "backgrounds": "Wood",
+    "baseLayer": "Hawaiian Shirt",
+    "topLayer": "Backpack",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/2059.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/lYzspzP88LQIGfzqTPue1BxFw4gF5HZCl51MyTzOcLU"
   },
   {
     "id": 1119,
