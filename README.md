@@ -40,11 +40,11 @@ SHA256 hashes:
 
 ```
 $ sha256sum _*
-b20c6239bf4116a0c83587615ea19b39d268c1f9671c51cec820a00bb0629a71  _input_elements.json
-6317ef8f0701b2fa51f63c975cbf01df0388143205ec11704d90cfde66d60071  _output_elementsNullTraitsAsNone.json
-0ff0b2eb2c0493b422a3cfb66596fca50ee798878b762f8585507f80962559c2  _output_elementsWithRarity.json
-1399882a00d6ada990812e7ae2e902dc889f10b611f0804e41fbc5e2d65099a5  _output_rarity.json
-355a78ab053f4c47943becf1ffc21d44139a5f99657eea5ef1d6f86fe7f36b28  _output_results.log
+ee697e4adda9c92ab83e6077047cf82aa1417315d749bee47b0190be6469174e  _input_elements.json
+683c4d7bb14d0281f5aeb2f70425b420ad7fb18760896aec820913d7e1bf641d  _output_elementsNullTraitsAsNone.json
+ed557036cd4cb9d58fbecdaa7eb7fe09002a23866658a7087d41b533e50e8817  _output_elementsWithRarity.json
+a6fad520458ff5fe64e3b252390ff5e6d9cf27d1dec7645d3dafcc9ed2f320e6  _output_rarity.json
+80001e99d3b31b864b311ec56fd97359a5959b2be709422d91a8c767bdfcbcd4  _output_results.log
 ```
 
 **Note:** Your hashes may be different if you just updated the data, as some nft were probably revealed since my hashes were produced.
