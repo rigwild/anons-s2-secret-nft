@@ -10890,10 +10890,20 @@
   },
   {
     "id": 668,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Tall Mountie",
+    "body": "Pink",
+    "tattoos": "No",
+    "backgrounds": "Rust",
+    "baseLayer": "Crew",
+    "topLayer": "Bomber",
+    "eyes": "Gold Sunglass",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1105.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/5zYTLA1wsiW7UnjlzRoiOIz8Y1OcFafsHMnr5CrUjRM"
   },
   {
     "id": 669,
@@ -14804,10 +14814,20 @@
   },
   {
     "id": 910,
-    "imageUrl": null,
-    "revealed": 0,
+    "headItem": "Snapback",
+    "body": "Blue",
+    "tattoos": "Yes",
+    "backgrounds": "Wood",
+    "baseLayer": "Crew",
+    "topLayer": "Varsity",
+    "eyes": "None",
+    "neck": "None",
+    "mouth": "None",
+    "ears": "None",
+    "imageUrl": "https://images.anons.army/img/1616.jpg",
+    "revealed": 1,
     "isMinted": 1,
-    "arweaveImageUrl": null
+    "arweaveImageUrl": "https://arweave.net/b_tFG6c24Mi9YqKGfIR8aJQH8pP2WxtgsQCY7v5Jaac"
   },
   {
     "id": 911,

@@ -2,6 +2,8 @@
 
 import 'zx/globals'
 
+await $`export NODE_OPTIONS='--no-experimental-fetch'`
+
 // pnpm i -g @squoosh/cli
 
 await $`mkdir -p ${__dirname}/elements-images/compressed`
